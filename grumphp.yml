@@ -1,0 +1,46 @@
+grumphp:
+  process_timeout: 120
+  testsuites:
+    static:
+      tasks:
+        - composer
+        - git_blacklist
+        - git_commit_message
+        - phpcs
+        - phpmnd
+  tasks:
+    composer:
+      file: ./composer.json
+      no_check_all: false
+      no_check_lock: false
+      no_check_publish: false
+      with_dependencies: false
+      strict: false
+    git_commit_message:
+      max_subject_width: 100
+      matchers:
+        - '/^(feat|fix|docs|style|refactor|test|chore)(\(.+\))?: .+/'
+    git_blacklist:
+      keywords:
+        - '(;| |^)(die|dd|dump|var_dump|eval)\('
+        - '(;| |^)exit;'
+        - 'console\.log\('
+      regexp_type: E
+      triggered_by: ['php']
+    phpcs:
+      standard: ./phpcs.xml
+      triggered_by: ['php']
+      whitelist_patterns:
+        - '/^src(.*)/'
+        - '/^tests(.*)/'
+    phpmnd:
+      directory: './src'
+      exclude: []
+      exclude_name: []
+      exclude_path: []
+      hint: false
+      ignore_funcs: []
+      ignore_numbers: []
+      ignore_strings: []
+      strings: false
+      triggered_by: ['php']

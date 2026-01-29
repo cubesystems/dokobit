@@ -1,0 +1,5 @@
+{
+    "status": "error",
+    "message": "File with such token not found",
+    "code": 404
+}

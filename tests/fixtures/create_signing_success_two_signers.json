@@ -1,0 +1,8 @@
+{
+    "status": "ok",
+    "token": "signing-token",
+    "signers": {
+        "signer1": "signer-token-1",
+        "signer2": "signer-token-2"
+    }
+}

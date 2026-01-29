@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<ruleset
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    name="laravel-PSR2"
+    xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/squizlabs/PHP_CodeSniffer/master/phpcs.xsd">
+
+    <exclude-pattern>*/frontend/*</exclude-pattern>
+    <exclude-pattern>*/resources/*</exclude-pattern>
+    <exclude-pattern>*/views/*</exclude-pattern>
+    <exclude-pattern>*/database/factories</exclude-pattern>
+    <exclude-pattern>*/database/seeders</exclude-pattern>
+    <exclude-pattern>*/routes/*</exclude-pattern>
+    <exclude-pattern>*/config/*</exclude-pattern>
+    <exclude-pattern>*/tests/*</exclude-pattern>
+
+    <rule ref="PSR12">
+        <!--  This rule conflicts with php 8.3. class constant types, enable once fixed  -->
+        <!--  https://github.com/PHPCSStandards/PHP_CodeSniffer/issues/106  -->
+        <exclude name="Generic.NamingConventions.UpperCaseConstantName"/>
+    </rule>
+
+    <rule ref="Internal.NoCodeFound">
+        <exclude-pattern>*.blade.php</exclude-pattern>
+    </rule>
+
+    <!--  Squiz rules  -->
+    <rule ref="Squiz.NamingConventions.ValidVariableName.NotCamelCaps"/>
+    <rule ref="Squiz.NamingConventions.ValidVariableName.StringNotCamelCaps"/>
+    <rule ref="Squiz.Arrays.ArrayDeclaration.NoCommaAfterLast"/>
+    <rule ref="Squiz.Strings.DoubleQuoteUsage"/>
+    <rule ref="Squiz.WhiteSpace.FunctionSpacing">
+        <properties>
+            <property name="spacing" value="1" />
+            <property name="spacingBeforeFirst" value="0" />
+            <property name="spacingAfterLast" value="0" />
+        </properties>
+    </rule>
+
+    <!--  SlevomatCodingStandard rules  -->
+    <rule ref="SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly">
+        <properties>
+            <property name="allowPartialUses" value="false"/>
+        </properties>
+    </rule>
+    <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses">
+        <properties>
+            <property name="searchAnnotations" value="true"/>
+        </properties>
+    </rule>
+    <rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses"/>
+</ruleset>

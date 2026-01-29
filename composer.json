@@ -1,0 +1,48 @@
+{
+    "name": "cubesystems/dokobit",
+    "type": "library",
+    "version": "1.0.0",
+    "description": "Generic Dokobit API integration package for Laravel",
+    "keywords": ["dokobit", "api", "laravel", "authentication", "signing"],
+    "license": "MIT",
+    "require": {
+        "php": "^8.4",
+        "guzzlehttp/guzzle": "^7.0",
+        "illuminate/http": "^11.0",
+        "spatie/laravel-data": "^4.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.0",
+        "orchestra/testbench": "^9.0",
+        "mockery/mockery": "^1.6",
+        "phpro/grumphp": "^2.18",
+        "squizlabs/php_codesniffer": "^4.0",
+        "slevomat/coding-standard": "^8.27",
+        "povils/phpmnd": "^3.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Dokobit\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Dokobit\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {}
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "config": {
+        "allow-plugins": {
+            "phpro/grumphp": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
+}

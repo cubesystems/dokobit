@@ -1,0 +1,8 @@
+{
+    "status": "pending",
+    "signers": {
+        "signer1": {
+            "status": "pending"
+        }
+    }
+}

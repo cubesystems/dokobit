@@ -1,0 +1,12 @@
+{
+    "status": "completed",
+    "signers": {
+        "signer1": {
+            "status": "signed",
+            "signing_time": "2015-07-07 14:34:12"
+        }
+    },
+    "file": "https://documents-gateway.example.com/api/signing/signed-file-1/download",
+    "file_digest": "3019df4114c9fb4418cef322e1821c21eb0f01c6fd7ed08a51d42e384a91a4cf",
+    "valid_to": "2017-07-07 14:34:12"
+}

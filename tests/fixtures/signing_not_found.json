@@ -1,0 +1,12 @@
+{
+    "status": "error",
+    "message": "Data validation failed",
+    "code": 10000,
+    "errors": [
+        {
+            "message": "Signing with such token not found.",
+            "error_code": 1,
+            "field": "[token]"
+        }
+    ]
+}
