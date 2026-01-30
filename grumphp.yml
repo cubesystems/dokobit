@@ -5,7 +5,6 @@ grumphp:
       tasks:
         - composer
         - git_blacklist
-        - git_commit_message
         - phpcs
         - phpmnd
   tasks:
@@ -16,10 +15,6 @@ grumphp:
       no_check_publish: false
       with_dependencies: false
       strict: false
-    git_commit_message:
-      max_subject_width: 100
-      matchers:
-        - '/^(feat|fix|docs|style|refactor|test|chore)(\(.+\))?: .+/'
     git_blacklist:
       keywords:
         - '(;| |^)(die|dd|dump|var_dump|eval)\('
