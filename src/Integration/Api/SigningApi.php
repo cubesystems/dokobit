@@ -4,7 +4,6 @@ namespace Dokobit\Integration\Api;
 
 use Dokobit\Enums\DokobitFileFormat;
 use Dokobit\Enums\FileUploadStatus;
-use Dokobit\Enums\SigningStatus;
 use Dokobit\Integration\DTOs\Signing\Entities\File;
 use Dokobit\Integration\DTOs\Signing\Requests\FileUploadRequestPayload;
 use Dokobit\Integration\DTOs\Signing\Requests\NewSigningRequestPayload;
@@ -110,26 +109,6 @@ class SigningApi extends ApiAccessor
         $acceptableStates = [
             FileUploadStatus::Uploaded->value,
             FileUploadStatus::Pending->value,
-        ];
-
-        if (!in_array($status, $acceptableStates, true)) {
-            throw new DokobitException(
-                $response->json('message', $response->reason()),
-                $response->status(),
-            );
-        }
-    }
-
-    /**
-     * @throws DokobitException
-     */
-    private function validateSigningCheckResponseByPayloadStatus(Response $response): void
-    {
-        $status = $response->json('status');
-
-        $acceptableStates = [
-            SigningStatus::Archived->value,
-            SigningStatus::Completed->value,
         ];
 
         if (!in_array($status, $acceptableStates, true)) {
