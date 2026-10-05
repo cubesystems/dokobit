@@ -13,6 +13,8 @@ Generic Dokobit API integration package for Laravel applications.
 
 ## Installation
 
+Requires PHP 8.4 or later and Laravel 11.x, 12.x, or 13.x.
+
 ```bash
 composer require cubesystems/dokobit
 ```
