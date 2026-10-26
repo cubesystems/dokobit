@@ -20,6 +20,7 @@ final class CreateSessionRequestPayload extends Data
         public string|Optional $phone,
         public array|Optional $authenticationMethods,
         public array|Optional $supportedResidencies,
+        public bool|Optional $smartidQrFlow,
     ) {
     }
 

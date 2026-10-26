@@ -61,4 +61,15 @@ class CreateSessionRequestPayloadTest extends TestCase
         $this->assertEquals(['id_card', 'mobile_id'], $payload->authenticationMethods);
         $this->assertEquals(['lv', 'lt'], $payload->supportedResidencies);
     }
+
+    public function test_create_session_request_payload_maps_smartid_qr_flow(): void
+    {
+        $payload = CreateSessionRequestPayload::from([
+            'origin_host' => 'https://example.com',
+            'smartid_qr_flow' => false,
+        ]);
+
+        $this->assertFalse($payload->smartidQrFlow);
+        $this->assertSame(false, $payload->toArray()['smartid_qr_flow']);
+    }
 }
